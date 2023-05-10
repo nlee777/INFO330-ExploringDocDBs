@@ -3,12 +3,16 @@ from pymongo import MongoClient
 
 mongoClient = MongoClient("mongodb://localhost/pokemon")
 pokemonDB = mongoClient['pokemondb']
-pokemonColl = pokemonDB['pokemon_data']
+pokemonColl = pokemonDB['anotherOne_10']
 
 def fetch(pokemonid):
     return pokemonColl.find_one({"pokedex_number":pokemonid})
 
 def battle(pokemon1, pokemon2):
+
+    print("Let the Pokemon battle begin! ================")
+    print("It's " + pokemon1['name'] + " vs " + pokemon2['name'])
+
     print("Let the Pokemon battle begin! ================")
     print("It's " + pokemon1['name'] + " vs " + pokemon2['name'])
 
